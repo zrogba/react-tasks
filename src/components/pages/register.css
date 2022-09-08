@@ -1,0 +1,16 @@
+.container {
+    row-gap: 10px;
+    display: grid;
+    column-gap: 3px;
+    box-sizing: border-box;
+    width: 400px;
+    margin: auto;
+    padding: 1px auto;
+    background-color: aliceblue;
+
+    
+}
+
+.form-group {
+    padding: 1.5em;
+}
