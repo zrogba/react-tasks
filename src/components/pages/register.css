@@ -11,6 +11,19 @@
     
 }
 
+.form  {
+    display: grid;
+    background-color: #d6e7ff;
+    box-sizing: border-box;
+    margin: auto;
+    border: 1px solid red;
+}
 .form-group {
     padding: 1.5em;
+    display: grid;
+}
+
+.input {
+    width: 29em;
+    border: 1px solid red;
 }
