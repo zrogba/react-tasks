@@ -60,7 +60,7 @@ const Register = () => {
 					</div>
 					<div className="form-group">
 						<label htmlFor="inputEmail">Email address</label>
-						<input type="email" autoComplete="off" className="form-control" id="inputEmail"
+						<input type="text" autoComplete="off" className="form-control" id="inputEmail"
 							aria-describedby="emailHelp" placeholder="Enter email" value={userRegistration.email}
 							name="email" onChange={handleInput} />
 					</div>
@@ -80,8 +80,9 @@ const Register = () => {
 			<div>
 				{
 					infos.map((curElem) => {
+						const {id, firstname, lastname, email, phone, password} = curElem;
 						return(
-							<div className="showDataStyle">
+							<div className="showDataStyle" key={curElem.id}>
 								<p>{curElem.firstname}</p>
 								<p>{curElem.lastname}</p>
 								<p>{curElem.email}</p>

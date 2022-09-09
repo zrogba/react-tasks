@@ -1,29 +1,31 @@
 .container {
-    row-gap: 10px;
-    display: grid;
-    column-gap: 3px;
-    box-sizing: border-box;
-    width: 400px;
-    margin: auto;
-    padding: 1px auto;
-    background-color: aliceblue;
-
+    display: flex;
+    justify-content: center;
+    margin: 12px auto;
+     
+    background-color: #5d7eac;
+    width: 320px;
     
 }
 
 .form  {
     display: grid;
-    background-color: #d6e7ff;
+    background-color: #5d7eac;
     box-sizing: border-box;
     margin: auto;
     border: 1px solid red;
 }
 .form-group {
-    padding: 1.5em;
+    padding: 1em;
     display: grid;
 }
 
-.input {
-    width: 29em;
-    border: 1px solid red;
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin: auto;
 }
