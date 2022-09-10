@@ -34,14 +34,14 @@ const Register = () => {
 		setInfo([...infos, newRecord]);
 		console.log(infos);
 
-		setUserRegistration({	firstname: "", lastname: "", phone: "", email: "", password: "",})
+		setUserRegistration({	firstname: "", lastname: "", phone: "", email: "", password: ""})
 	}
 	return (
 		
 		<>
-			
+			<div className="container">
 			<div className="card" >
-			<h2>Create an account</h2>
+			<span>Create an account<br /><a href="">or Login</a></span>
 				<form action="" onSubmit={handleSubmit}>
 					<div className="form-group">
 						<label htmlFor="inputFname">First Name</label>
@@ -79,7 +79,7 @@ const Register = () => {
 					<button type="submit" className="btn">Submit</button>
 				</form>
 			</div>
-		 
+			<div className="display-console">
 			<div>
 				{
 					infos.map((curElem) => {
@@ -98,7 +98,8 @@ const Register = () => {
 					}) 
 				}
 			</div>
-			
+			</div>
+			</div>
 		</>
 	)
 
