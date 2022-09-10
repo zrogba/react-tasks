@@ -61,3 +61,8 @@ label {
     border-radius: 12px;
     width: 18rem;
 }
+
+.form-check {
+    display: flex;
+}
+
