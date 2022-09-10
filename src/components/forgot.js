@@ -52,7 +52,7 @@ const Forgot = () => {
 
 					<button type="submit" className="btn">Submit</button>
 				</form>
-  <Link to="/Login" class="dropdown-item" >Back to login</Link>
+  <Link to="/Login" className="dropdown-item" >Back to login</Link>
 
 			</div>
 		 

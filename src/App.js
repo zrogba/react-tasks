@@ -1,28 +1,28 @@
 import './App.css';
-import { Router, Routes, Route } from 'react-router-dom';
-import Forgot from './components/pages/forgot/forgot';
-import Login from './components/pages/login/login';
-import Register from './components/pages/register/register';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Forgot from './components/forgot';
+import Login from './components/login';
+import Register from './components/register';
 
 
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
    
    
       <div className="App">
       <Routes>
-          <Route exact path="/" element={<Login/>} />
-          <Route exact path="/Login" element={<Login/>}/>
-          <Route exact path="/register" element={<Register/>}/>
-          <Route exact path="/forgot" element={<Forgot/>}/>
+          <Route path="/" element={<Login/>} />
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/forgot" element={<Forgot/>}/>
         
           </Routes>
       </div>
     
     
-    </Router>
+    </BrowserRouter>
   );
 }
 

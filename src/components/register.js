@@ -1,6 +1,7 @@
 import React from "react";
 import './register.css';
 import { useState } from "react";
+import {  Link } from 'react-router-dom';
 //1.create constant register
 const Register = () => {
 	//3.import usestate snippet and create array of data
@@ -41,7 +42,7 @@ const Register = () => {
 		<>
 			<div className="container">
 			<div className="card" >
-			<span>Create an account<br /><a href="">or Login</a></span>
+			<span>Create an account<br /><Link to="/Login">or Login</Link></span>
 				<form action="" onSubmit={handleSubmit}>
 					<div className="form-group">
 						<label htmlFor="inputFname">First Name</label>

@@ -54,17 +54,17 @@ const Login = () => {
 							aria-describedby="emailHelp" placeholder="Enter email" value={userLogin.email}
 							name="email" onChange={handleInput} />
 					</div>
-					<div class="form-check">
-    <input type="checkbox" class="form-check-input" id="dropdownCheck2" />
-    <label class="form-check-label" for="dropdownCheck2">
+					<div className="form-check">
+    <input type="checkbox" className="form-check-input" id="dropdownCheck2" />
+    <label htmlFor="dropdownCheck2" className="form-check-label">
       Remember me
     </label>
-	<link to="Forgot"class="dropdown-item" >Forgot password?</link>
+	<Link to="/Forgot"className="dropdown-item" >Forgot password?</Link>
   </div>
 					<button type="submit" className="btn">Submit</button>
 				</form>
-				 <div class="dropdown-divider"></div>
-  <link to="/Register"class="dropdown-item" >New around here? Sign up</link>
+				 <div className="dropdown-divider"></div>
+  <Link to="/Register"className="dropdown-item" >New around here? Sign up</Link>
   
 
 			</div>
