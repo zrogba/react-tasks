@@ -1,31 +1,51 @@
-.container {
-    display: flex;
+.conatiner {
+    display: grid;
+}
+
+h2{
+    padding: 0;
+    margin: 5px auto;
+}
+.card {
+    display: grid;
     justify-content: center;
     margin: 12px auto;
-     
     background-color: #5d7eac;
-    width: 320px;
-    
+    border-radius: 12px;
+    width: 18rem;
 }
 
 .form  {
-    display: grid;
+    
     background-color: #5d7eac;
     box-sizing: border-box;
-    margin: auto;
-    border: 1px solid red;
-}
-.form-group {
-    padding: 1em;
     display: grid;
+    margin: auto;
 }
-
 
 .form-control {
-    width: 100%;
-    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    resize: vertical;
+    border-radius: 10px;
     margin: auto;
+    padding: 0.325em;
+    resize: vertical;
+    width: 14rem;
+}
+.btn {
+    display: block;
+    color: #213a83;
+    text-decoration: none;
+    padding-right: 0.5em;
+    margin: .5em auto;
+    background-color: #9a7575;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+    padding: 2px 25px 2px 25px;
+    cursor: pointer;
+}
+label {
+    padding: 0.25rem;
+    display: flex;
+    margin: 10px auto;
 }

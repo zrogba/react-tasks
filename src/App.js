@@ -1,4 +1,5 @@
 import './App.css';
+import Login from './components/login/login';
 import Register from './components/pages/register';
 
 
@@ -6,7 +7,7 @@ function App() {
   return (
     <div className="App">
     <div className='container'>
-    <Register />
+    <Login/>
     </div>
    
     </div>

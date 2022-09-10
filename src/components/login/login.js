@@ -1,8 +1,8 @@
 import React from "react";
-import './register.css';
+import './login.css';
 import { useState } from "react";
 //1.create constant register
-const Register = () => {
+const Login = () => {
 	//3.import usestate snippet and create array of data
 	const [userRegistration, setUserRegistration] = useState({
 
@@ -41,31 +41,13 @@ const Register = () => {
 		<>
 			
 			<div className="card" >
-			<h2>Create an account</h2>
+			<h2>Sign Up</h2>
 				<form action="" onSubmit={handleSubmit}>
 					<div className="form-group">
 						<label htmlFor="inputFname">First Name</label>
 						<input type="text" autoComplete="off" className="form-control" id="inputFname"
 							placeholder="First Name" value={userRegistration.firstname}
 							name="firstname" onChange={handleInput} />
-					</div>
-					<div className="form-group">
-						<label htmlFor="inputLname">Last Name</label>
-						<input type="text" autoComplete="off" className="form-control" id="inputLname"
-							placeholder="Last Name" value={userRegistration.lastname}
-							name="lastname" onChange={handleInput} />
-					</div>
-					<div className="form-group">
-						<label htmlFor="inputPhone">Phone Number</label>
-						<input type="text" autoComplete="off" className="form-control" id="inputPhone"
-							placeholder="Phone" value={userRegistration.phone}
-							name="phone" onChange={handleInput} />
-					</div>
-					<div className="form-group">
-						<label htmlFor="inputEmail">Email address</label>
-						<input type="text" autoComplete="off" className="form-control" id="inputEmail"
-							aria-describedby="emailHelp" placeholder="Enter email" value={userRegistration.email}
-							name="email" onChange={handleInput} />
 					</div>
 
 					<div className="form-group row">
@@ -103,4 +85,4 @@ const Register = () => {
 	)
 
 }
-export default Register;
+export default Login;
