@@ -80,26 +80,7 @@ const Register = () => {
 					<button type="submit" className="btn">Submit</button>
 				</form>
 			</div>
-			<div className="display-console">
-			<div>
-				{
-					infos.map((curElem) => {
-						const {id, firstname, lastname, email, phone, password,} = curElem;
-						return(
-							<div className="showDataStyle" key={curElem.id}>
-								<p>{curElem.firstname}</p>
-								<p>{curElem.lastname}</p>
-								<p>{curElem.email}</p>
-								<p>{curElem.phone}</p>
-								<p>{curElem.password}</p>
-
-							</div>
-						)
-						
-					}) 
-				}
-			</div>
-			</div>
+			
 			</div>
 		</>
 	)
