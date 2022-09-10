@@ -83,7 +83,7 @@ const Register = () => {
 			<div>
 				{
 					infos.map((curElem) => {
-						const {id, firstname, lastname, email, phone, password} = curElem;
+						const {id, firstname, lastname, email, phone, password,} = curElem;
 						return(
 							<div className="showDataStyle" key={curElem.id}>
 								<p>{curElem.firstname}</p>

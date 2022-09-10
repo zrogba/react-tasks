@@ -8,3 +8,9 @@
   display: flex;
   
 }
+a{
+  color: wheat;
+  display: block;
+  padding: 3px;
+  margin: 5px;
+}
