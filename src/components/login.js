@@ -1,6 +1,7 @@
 import React from "react";
 import './login.css';
 import { useState } from "react";
+import {  Link } from 'react-router-dom';
 //1.create constant login
 const Login = () => {
 	//3.import usestate snippet and create array of data
@@ -58,12 +59,12 @@ const Login = () => {
     <label class="form-check-label" for="dropdownCheck2">
       Remember me
     </label>
-	<a class="dropdown-item" href="#">Forgot password?</a>
+	<link to="Forgot"class="dropdown-item" >Forgot password?</link>
   </div>
 					<button type="submit" className="btn">Submit</button>
 				</form>
 				 <div class="dropdown-divider"></div>
-  <a class="dropdown-item" href="#">New around here? Sign up</a>
+  <link to="/Register"class="dropdown-item" >New around here? Sign up</link>
   
 
 			</div>

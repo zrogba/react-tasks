@@ -1,5 +1,6 @@
 import React from "react";
-import {Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
+
 import './forgot.css';
 import { useState } from "react";
 //1.create constant login
@@ -7,7 +8,7 @@ const Forgot = () => {
 	//3.import usestate snippet and create array of data
 	const [userForgot, setUserLogin] = useState({
 
-		username: "",
+		email: "",
 		password: "",
 	});
 	//7.call method function for new info
@@ -32,7 +33,7 @@ const Forgot = () => {
 		setInfo([...infos, newRecord]);
 		console.log(infos);
 
-		setUserLogin({	username: "", password: "",})
+		setUserLogin({	email: "", password: "",})
 	}
 
 	return (

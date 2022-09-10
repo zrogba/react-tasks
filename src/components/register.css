@@ -5,10 +5,7 @@
     align-items: center;
 }
 
-h2, h6{
-    padding: 0;
-    margin: 5px auto;
-}
+
 .card {
     display: grid;
     justify-content: center;
@@ -37,7 +34,7 @@ h2, h6{
 }
 .btn {
     display: block;
-    color: #213a83;
+    color: white;
     text-decoration: none;
     padding-right: 0.5em;
     margin: .5em auto;
@@ -51,6 +48,7 @@ label {
     padding: 0.25rem;
     display: flex;
     margin: 10px auto;
+    color: white;
 }
 
 .display-console {
