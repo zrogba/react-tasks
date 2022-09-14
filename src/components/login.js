@@ -5,14 +5,14 @@ import {  Link } from 'react-router-dom';
 //1.create constant login
 const Login = () => {
 	//3.import usestate snippet and create array of data
-	const [userLogin, setUserLogin] = useState({
+	const [values, setvalues] = useState({
 
 		username: "",
 		password: "",
 	});
 	//7.call method function for new info
 	//8.using the map mehod to display 	
-	const [infos, setInfo] = useState([]);
+	const [records, setRecords] = useState([]);
 	//2.call method handleInput to send data via input 
 	//to the e.target event handler /run tests in browser console
 	const handleInput = (e) => {
@@ -21,18 +21,18 @@ const Login = () => {
 		console.log(name, value);
 //5.using the spread operator to caall the array of data run tests in browser console
 //
-		setUserLogin({...userLogin, [name]: value})
+		setvalues({...values, [name]: value})
 	}
 		
 //6. call the handlesubmit e.preventDefault method to implement submit
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const newRecord = { ...userLogin, id:new Date().getTime().toString()}
-		console.log(infos);
-		setInfo([...infos, newRecord]);
-		console.log(infos);
+		const newRecord = { ...values, id:new Date().getTime().toString()}
+		console.log(records);
+		setRecords([...records, newRecord]);
+		console.log(records);
 
-		setUserLogin({	username: "", password: "",})
+		setvalues({	username: "", password: "",})
 	}
 	return (
 		
@@ -44,14 +44,14 @@ const Login = () => {
 					<div className="form-group">
 						<label htmlFor="inputUname">Username</label>
 						<input type="text" autoComplete="off" className="form-control" id="inputUname"
-							placeholder="Username" value={userLogin.username}
+							placeholder="Username" value={values.username}
 							name="username" onChange={handleInput} />
 					</div>
 
 					<div className="form-group">
 						<label htmlFor="inputEmail">Email address</label>
 						<input type="text" autoComplete="off" className="form-control" id="inputEmail"
-							aria-describedby="emailHelp" placeholder="Enter email" value={userLogin.email}
+							aria-describedby="emailHelp" placeholder="Enter email" value={values.email}
 							name="email" onChange={handleInput} />
 					</div>
 					<div className="form-check">

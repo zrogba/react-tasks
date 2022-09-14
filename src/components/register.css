@@ -45,19 +45,20 @@
     cursor: pointer;
 }
 label {
-    padding: 0.25rem;
+    padding: 2px;
     display: flex;
-    margin: 10px auto;
+    margin: 3px auto;
     color: white;
 }
 
-.display-console {
+.showDataStyle{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin: 12px auto;
     background-color: #5d7eac;
     border-radius: 12px;
-    width: 18rem;
+    width: 30rem;
+    color: white;
 }
 
 .form-check {
