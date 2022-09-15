@@ -1,20 +1,25 @@
 import React from "react";
 import './register.css';
-import { useState } from "react";
 import { Link } from 'react-router-dom';
-import Validations from "./validations";
+import useForm from "./useForm";
  
 //1.create  register
-const Register = () => {
+const Register = ({ submitForm}) => {
+
 	//3.import usestate snippet and create array of data of the input values
-	//10.set the usestate for errors
-	
+	const {handleInput, handleSubmit, values, errors} = useForm(submitForm);
+	//replace and   create a custom hook to defracture  useForm
+	/*
 	const [values, setValues] = useState({
 		firstname: "", lastname: "",
 		phone: "", email: "",
-		password: "",
+		password: "", confirmPassword: "",
 	});
+	//10.set the usestate for errors
 	const [errors, setErrors] = useState({});
+	//11.set the usestate for correct data input
+	const [dataIsCorrect, setDataIsCorrect] = useState(false);
+
 	//2.call method handleInput to send data via input 
 	//to the e.target event handler /run tests in browser console
 	const handleInput = (e) => {
@@ -32,9 +37,18 @@ const Register = () => {
 		
 //9.to validate and show the errors
 setErrors(Validations(values));
-		 
+		 //15.when clicked set data is true
+setDataIsCorrect(true);
 	};
+//impleemtn usefect to chekc if there are errors
+useEffect(() => {
 
+  if(Object.keys(errors).length === 0 && dataIsCorrect) {
+	submitForm(true);
+
+  } // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [errors]);
+*/
 //.call the errors to check if true to display in div paragraph
 	return (
 
@@ -42,7 +56,7 @@ setErrors(Validations(values));
 			<div className="container">
 				<div className="card" >
 					<h2>Create an account</h2> 
-					<h6><Link to="/Login">or Login</Link></h6>
+					<h4><Link to="/Login">or Login</Link></h4>
 										<form action="" onSubmit={handleSubmit}>
 						<div className="form-group">
 							<label htmlFor="firstname">First Name</label>
@@ -84,12 +98,12 @@ setErrors(Validations(values));
 						<div className="form-group row">
 							<label htmlFor="confirmPassword" className="col-sm-2 col-form-label">Confirm Password</label>
 
-							<input type="confirmPassword" autoComplete="off" className="form-control" id="confirmPassword"
+							<input type="Password" autoComplete="off" className="form-control" id="confirmPassword"
 								value={values.confirmPassword} placeholder="Retype Password" name="confirmPassword" onChange={handleInput} />
 								{errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
 						</div>
 
-						<button type="submit" className="btn">Submit</button>
+						<button type="submit" className="btn" onClick={handleSubmit}>Register</button>
 					</form>
 
 				</div>
@@ -101,3 +115,4 @@ setErrors(Validations(values));
 
 }
 export default Register;
+
