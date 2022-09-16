@@ -5,28 +5,19 @@ import Login from './components/login';
 import Register from './components/register';
 import FormSuccess from './components/FormSuccess';
 
-
-
-
 function App() {
   return (
     <BrowserRouter>
-   
-   
       <div className="App">
-      <Routes>
-          <Route path="/" element={<Login/>} />
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/forgot" element={<Forgot/>}/>
-          <Route path="/FormSuccess" element={<FormSuccess/>}/>
-
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot" element={<Forgot />} />
+          <Route path="/FormSuccess" element={<FormSuccess />} />
+        </Routes>
       </div>
-    
-    
     </BrowserRouter>
   );
 }
-
 export default App;

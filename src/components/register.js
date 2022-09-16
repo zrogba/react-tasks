@@ -2,12 +2,10 @@ import React from "react";
 import './register.css';
 import { Link } from 'react-router-dom';
 import useForm from "./useForm";
- 
 //1.create  register
 const Register = (submitForm) => {
-
 	//3.import usestate snippet and create array of data of the input values
-	const {handleInput, handleSubmit, values, errors} = useForm(submitForm);
+	const { handleInput, handleSubmit, values, errors } = useForm();
 	//replace and   create a custom hook to defracture  useForm
 	/*
 	const [values, setValues] = useState({
@@ -49,42 +47,41 @@ useEffect(() => {
   } // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [errors]);
 */
-//.call the errors to check if true to display in div paragraph
+	//.call the errors to check if true to display in div paragraph
 	return (
-
 		<>
 			<div className="container">
 				<div className="card" >
-					<h2>Create an account</h2> 
+					<h2>Create an account</h2>
 					<h4><Link to="/Login">or Login</Link></h4>
-										<form action="" onSubmit={handleSubmit}>
+					<form action="" onSubmit={handleSubmit}>
 						<div className="form-group">
 							<label htmlFor="firstname">First Name</label>
 							<input type="text" autoComplete="off" className="form-control" id="firstname"
 								placeholder="First Name" value={values.firstname}
 								name="firstname" onChange={handleInput} />
-								{errors.firstname && <p className="error">{errors.firstname}</p>}
+							{errors.firstname && <p className="error">{errors.firstname}</p>}
 						</div>
 						<div className="form-group">
 							<label htmlFor="lastname">Last Name</label>
 							<input type="text" autoComplete="off" className="form-control" id="lastname"
 								placeholder="Last Name" value={values.lastname}
 								name="lastname" onChange={handleInput} />
-								{errors.lastname && <p className="error">{errors.lastname}</p>}
+							{errors.lastname && <p className="error">{errors.lastname}</p>}
 						</div>
 						<div className="form-group">
 							<label htmlFor="phone">Phone Number</label>
 							<input type="text" autoComplete="off" className="form-control" id="phone"
 								placeholder="Phone" value={values.phone}
 								name="phone" onChange={handleInput} />
-								{errors.phone && <p className="error">{errors.phone}</p>}
+							{errors.phone && <p className="error">{errors.phone}</p>}
 						</div>
 						<div className="form-group">
 							<label htmlFor="email">Email address</label>
 							<input type="text" autoComplete="off" className="form-control" id="email"
 								aria-describedby="emailHelp" placeholder="Enter email" value={values.email}
 								name="email" onChange={handleInput} />
-								{errors.email && <p className="error">{errors.email}</p>}
+							{errors.email && <p className="error">{errors.email}</p>}
 						</div>
 
 						<div className="form-group row">
@@ -92,7 +89,7 @@ useEffect(() => {
 
 							<input type="password" autoComplete="off" className="form-control" id="password"
 								value={values.password} placeholder="Password" name="password" onChange={handleInput} />
-								{errors.password && <p className="error">{errors.password}</p>}
+							{errors.password && <p className="error">{errors.password}</p>}
 						</div>
 
 						<div className="form-group row">
@@ -100,19 +97,18 @@ useEffect(() => {
 
 							<input type="Password" autoComplete="off" className="form-control" id="confirmPassword"
 								value={values.confirmPassword} placeholder="Retype Password" name="confirmPassword" onChange={handleInput} />
-								{errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
+							{errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
 						</div>
 
 						<button type="submit" className="btn" onClick={handleSubmit}>Register</button>
 					</form>
 
 				</div>
-				
+
 			</div>
 
 		</>
 	)
-
 }
 export default Register;
 
