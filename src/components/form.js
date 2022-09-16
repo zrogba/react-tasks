@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Register from "./components/register";
-import Login from "./components/login";
-import FormSuccess from "./components/formSuccess";
+import Register from "./register";
+
+import FormSuccess from "./formSuccess";
 
 
-const Form = () => {
+const Form = (submitForm) => {
     //create a state called form is submitted with assigned value false
     //if form is correct 
     const [formIsSubmitted, setFormIsSubmitted] = useState(false);

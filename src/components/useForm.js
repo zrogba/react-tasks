@@ -1,8 +1,9 @@
 	import {useState, useEffect} from "react";
     import Validations from "./validations";
+    import { useNavigate } from "react-router-dom";
 
 
-    const useForm = (callback) => {
+    const useForm = (submitForm) => {
 	const [values, setValues] = useState({
 		firstname: "", 
         lastname: "",
@@ -11,6 +12,8 @@
 		password: "", 
         confirmPassword: "",
 	});
+    
+    const navigate = useNavigate();
 	//10.set the usestate for errors
 	const [errors, setErrors] = useState({});
 	//11.set the usestate for correct data input
@@ -18,14 +21,6 @@
 
 	//2.call method handleInput to send data via input 
 	//to the e.target event handler /run tests in browser console
-    useEffect(() => {
-        
-        if(Object.keys(errors).length === 0 && dataIsCorrect) {
-   callback(true);
-
-  }
-}, [errors, dataIsCorrect, callback]);
-
 	const handleInput = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -40,8 +35,18 @@
 		e.preventDefault();
         setErrors(Validations(values));
         setDataIsCorrect(true);
+        
+        
+  navigate('/FormSuccess');
 	};
+    useEffect(() => {
+        
 
+        if(Object.keys(errors).length === 0 && dataIsCorrect) {
+   submitForm(true);
+
+  }
+}, [errors, dataIsCorrect, submitForm]);
 
 return {handleInput, handleSubmit, errors, values, dataIsCorrect}
 };

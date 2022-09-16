@@ -1,12 +1,13 @@
 import React from "react";
 
 
-const FormSuccess = (_submitForm) => {
+const FormSuccess = (submitForm) => {
 
     return (
         <div className="container">
             <div className="app-wrapper">
-                <h1 className="form-success">Account created!</h1>
+                <h1 className="form-success">Account created!<i class="fa-thin fa-circle-check"></i></h1>
+                
             </div>
         </div>
     );

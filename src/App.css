@@ -1,6 +1,7 @@
 .App {
   text-align: center;
- background-color: aliceblue;
+ background: url('images/bg.png');
+ background-position: center;
   height: 100vh;
 
 }
@@ -10,9 +11,10 @@
   height: 100%;
   
   
+  
 }
 a{
-  color: wheat;
+  color: rgb(39, 74, 157);
   display: block;
   padding: 0px 4px 0px 4px;
   margin: 2px auto;
@@ -20,7 +22,7 @@ a{
  h2, h4{
   padding: 0;
   margin: 2px auto;
-  color: white;
+  color: rgb(12, 9, 9);
 }
 p.error {
   padding: 0;
@@ -28,3 +30,4 @@ p.error {
   color: red;
   font-size: .8rem;
 }
+

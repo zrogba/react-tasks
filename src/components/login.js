@@ -34,6 +34,7 @@ const Login = () => {
     <label htmlFor="dropdownCheck2" className="form-check-label">
       Remember me
     </label>
+	<br></br>
 	<Link to="/Forgot"className="dropdown-item" >Forgot password?</Link>
   </div>
 					<button type="submit" className="btn">Submit</button>

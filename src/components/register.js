@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import useForm from "./useForm";
  
 //1.create  register
-const Register = ({ submitForm}) => {
+const Register = (submitForm) => {
 
 	//3.import usestate snippet and create array of data of the input values
 	const {handleInput, handleSubmit, values, errors} = useForm(submitForm);
