@@ -13,7 +13,7 @@ const useForm = (submitForm) => {
         confirmPassword: "",
     });
 
-    // const navigate = useNavigate();
+    //const navigate = useNavigate();
     //10.set the usestate for errors
     const [errors, setErrors] = useState({});
     //11.set the usestate for correct data input
@@ -35,12 +35,13 @@ const useForm = (submitForm) => {
         e.preventDefault();
         setErrors(Validations(values));
         setDataIsCorrect();
+        
 
-        //  navigate('/FormSuccess');
+        //navigate('/FormSuccess');
     };
     useEffect(() => {
         if (Object.keys(errors).length === 0 && dataIsCorrect) {
-            submitForm(true);
+            submitForm('');
         }
     }, [errors, dataIsCorrect, submitForm]);
 

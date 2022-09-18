@@ -6,7 +6,7 @@ import useForm from "./useForm";
 //1.create constant login
 const Login = () => {
 	//3.import usestate snippet and create array of data
-	const {handleInput, handleSubmit, values, errors} = useForm();
+	const {handleInput, handleSubmit,values, errors} = useForm();
 	return (
 		
 		<>
