@@ -2,6 +2,8 @@ import React from "react";
 import './register.css';
 import { Link } from 'react-router-dom';
 import useForm from "./useForm";
+ //Firebase
+
 
 
 //1.create  register
@@ -92,8 +94,8 @@ useEffect(() => {
 						<div className="form-group row">
 							<label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
 
-							<input type="password" autoComplete="off" className="form-control" id="password"
-								value={values.password} placeholder="Password" name="password" onChange={handleInput} />
+							<input type='password' autoComplete="off" className="form-control" id="password"
+								value={values.password} placeholder="Password" name="password" onChange={handleInput}/>
 							{errors.password && <p className="error">{errors.password}</p>}
 						</div>
 
@@ -104,9 +106,9 @@ useEffect(() => {
 								value={values.confirmPassword} placeholder="Retype Password" name="confirmPassword" onChange={handleInput} />
 							{errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
 						</div>
-
+						<Link to="/FormSuccess">
 						<button type="submit" className="btn" onClick={handleSubmit}>Register</button>
-						
+						</Link>
 					</form>
 
 				</div>

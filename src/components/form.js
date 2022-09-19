@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Register from "./register";
 import Login from "./login";
-import FormSuccess from "./formSuccess";
+import FormSuccess from "./FormSuccess";
 
 
 const Form = (submitForm) => {

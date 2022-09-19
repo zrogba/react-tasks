@@ -37,6 +37,7 @@ else if(!/(?=.*?[#?!@$%^&*-])/.test(values.password)){
  //CONFIRM THE PASSWORD  
  else if (values.confirmPassword!==values.password){ 
   errors.confirmPassword= 'Password and confirm password does not match';
+  values = false; 
   
 }
 //return null// always return null here since as you'd want the error displayed on the confirmation input
