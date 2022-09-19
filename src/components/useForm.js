@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Validations from "./validations";
 //import { useNavigate } from "react-router-dom";
+ //Firebase
 
 
 const useForm = (submitForm) => {
@@ -35,7 +36,9 @@ const useForm = (submitForm) => {
         e.preventDefault();
         setErrors(Validations(values));
         setDataIsCorrect();
-        
+        // Firebase
+
+
 
         //navigate('/FormSuccess');
     };

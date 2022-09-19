@@ -2,9 +2,7 @@ import React from "react";
 import './register.css';
 import { Link } from 'react-router-dom';
 import useForm from "./useForm";
- //Firebase
-
-
+import {db} from "../firebase";
 
 //1.create  register
 
@@ -55,6 +53,10 @@ useEffect(() => {
 */
 	//.call the errors to check if true to display in div paragraph
 	
+	db.collection("users")
+	.add({values: values});
+
+
 	return (
 		<>
 			<div className="container">
