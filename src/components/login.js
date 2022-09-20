@@ -40,8 +40,8 @@ const Login = () => {
 					<button type="submit" className="btn">Submit</button>
 				</form>
 				 <div className="dropdown-divider"></div>
-				 <span className="large-link"><Link to="/Register"className="dropdown-item" >
-					<small>New around here?</small> Sign up</Link>
+				 <span className="large-link"><small>New around here?</small><Link to="/Register"className="dropdown-item" >
+					 Sign up</Link>
 					</span>
 
 			</div>
