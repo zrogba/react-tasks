@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Validations from "./validations";
 //import { useNavigate } from "react-router-dom";
- //Firebase
+//Firebase
 
 
 const useForm = (submitForm) => {

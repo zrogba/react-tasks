@@ -33,15 +33,16 @@ const Login = () => {
     <input type="checkbox" className="form-check-input" id="dropdownCheck2" />
     <label htmlFor="dropdownCheck2" className="form-check-label">
       Remember me
-    </label>
-	<br></br>
-	<Link to="/Forgot"className="dropdown-item" >Forgot password?</Link>
+    </label> 
+	<span className="seperator">|</span>
+	<span className="large-link"><Link to="/Forgot"className="dropdown-item" >Forgot password?</Link></span>
   </div>
 					<button type="submit" className="btn">Submit</button>
 				</form>
 				 <div className="dropdown-divider"></div>
-  <Link to="/Register"className="dropdown-item" >New around here? Sign up</Link>
-  
+				 <span className="large-link"><Link to="/Register"className="dropdown-item" >
+					<small>New around here?</small> Sign up</Link>
+					</span>
 
 			</div>
 		 

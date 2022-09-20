@@ -1,37 +1,43 @@
 .App {
-  text-align: center;
   background: url('images/bg.png');
   background-position: center;
   height: 100vh;
-
+  text-align: center;
 }
 
 .container {
-
   display: flex;
   height: 100%;
-
-
-
 }
 
 a {
   color: rgb(39, 74, 157);
   display: block;
-  padding: 0px 4px 0px 4px;
   margin: 2px auto;
+  padding: 0px 4px 0px 4px;
+  text-decoration: none;
 }
 
 h2,
 h4 {
+  color: rgb(12, 9, 9);
   padding: 0;
   margin: 2px auto;
-  color: rgb(12, 9, 9);
 }
 
 p.error {
-  padding: 0;
-  margin: 0;
   color: red;
   font-size: .8rem;
+  margin: 0;
+  padding: 0;
+  
+}
+span.seperator {
+  color: #5d7eac;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+span.large-link {
+  padding: 0;
+  margin: 2px auto;
 }
