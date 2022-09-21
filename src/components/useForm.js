@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import Validations from "./validations";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //Firebase
 
 
-const useForm = (submitForm) => {
+const useForm = (SubmitForm) => {
     const [values, setValues] = useState({
         firstname: "",
         lastname: "",
@@ -14,17 +14,17 @@ const useForm = (submitForm) => {
         confirmPassword: "",
     });
 
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     //10.set the usestate for errors
     const [errors, setErrors] = useState({});
     //11.set the usestate for correct data input
     const [dataIsCorrect, setDataIsCorrect] = useState(false);
-
-    //2.call method handleInput to send data via input 
+   
+    //2.call method se to send data via input 
     //to the e.target event handler /run tests in browser console
-    const handleInput = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
         console.log(name, value);
         //5.using the spread operator to caall the array of data run tests in browser console
         //
@@ -32,23 +32,21 @@ const useForm = (submitForm) => {
     };
 
     //6. call the handlesubmit e.preventDefault method to implement submit
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
         setErrors(Validations(values));
-        setDataIsCorrect();
-        // Firebase
-
-
-
-        //navigate('/FormSuccess');
+        setDataIsCorrect(true);
+        
     };
     useEffect(() => {
+      
         if (Object.keys(errors).length === 0 && dataIsCorrect) {
-            submitForm('');
-        }
-    }, [errors, dataIsCorrect, submitForm]);
-
-    return { handleInput, handleSubmit, errors, values, dataIsCorrect }
+            navigate("/FormSuccess")
+        };
+        
+    }, [errors, dataIsCorrect, SubmitForm]);
+   
+    return { handleChange, handleSubmit, errors, values, dataIsCorrect }
 };
 
 export default useForm;

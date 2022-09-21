@@ -1,26 +1,25 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Register from "./register";
-import Login from "./login";
 import FormSuccess from "./FormSuccess";
 
 
-const Form = (submitForm) => {
+const Form = (SubmitForm) => {
     //create a state called form is submitted with assigned value false
     //if form is correct 
     const [formIsSubmitted, setFormIsSubmitted] = useState(false);
 
-    const submitForm = () => {
+    const SubmitForm = () => {
         setFormIsSubmitted(true);
     };
-    //pass props submitform from form to register etc
+    //pass props SubmitForm from form to register etc
     return (
         <div>
             {!formIsSubmitted ? (
-                <Register submitForm={submitForm} />
-            ) : (
+                <Register SubmitForm={SubmitForm} />
+                ) : (
                 <FormSuccess />
             )}
         </div>
     );
-}
+};
 export default Form;
