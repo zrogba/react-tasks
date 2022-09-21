@@ -10,12 +10,13 @@ const Form = (SubmitForm) => {
 
     const SubmitForm = () => {
         setFormIsSubmitted(true);
+        SubmitForm()
     };
     //pass props SubmitForm from form to register etc
     return (
         <div>
             {!formIsSubmitted ? (
-                <Register SubmitForm={SubmitForm} />
+                <Register  />
                 ) : (
                 <FormSuccess />
             )}

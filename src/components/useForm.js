@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 //Firebase
 
 
-const useForm = (SubmitForm) => {
+const useForm = () => {
     const [values, setValues] = useState({
         firstname: "",
         lastname: "",
@@ -44,7 +44,7 @@ const useForm = (SubmitForm) => {
             navigate("/FormSuccess")
         };
         
-    }, [errors, dataIsCorrect, SubmitForm]);
+    }, [errors, dataIsCorrect, navigate ]);
    
     return { handleChange, handleSubmit, errors, values, dataIsCorrect }
 };

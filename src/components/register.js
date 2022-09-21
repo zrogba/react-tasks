@@ -7,9 +7,9 @@ import { db } from "../firebase";
 
 //1.create  register
 
-const Register = ({SubmitForm}) => {
+const Register = () => {
 	//3.import usestate snippet and create array of data of the input values
-	const { handleChange, handleSubmit, values, errors} = useForm(SubmitForm);
+	const { handleChange, handleSubmit, values, errors} = useForm( );
 
 	//replace and   create a custom hook to defracture  useForm
 	/*

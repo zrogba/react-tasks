@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const FormSuccess = () => {
+const FormSuccess = (SubmitForm) => {
 
     return (
         <div className="container">
