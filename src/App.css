@@ -41,3 +41,8 @@ span.large-link {
   padding: 0;
   margin: 2px auto;
 }
+
+svg {
+  color: green;
+  font-size: 2em;
+}
