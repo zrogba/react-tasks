@@ -45,7 +45,7 @@ const useForm = () => {
             
         };
         
-    }, [errors, dataIsCorrect, navigate ]);
+    }, [errors, dataIsCorrect, navigate]);
    
     return { handleChange, handleSubmit, errors, values, dataIsCorrect }
 };
