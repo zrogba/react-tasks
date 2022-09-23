@@ -42,6 +42,7 @@ const useForm = () => {
       
         if (Object.keys(errors).length === 0 && dataIsCorrect) {
             navigate("/FormSuccess")
+            
         };
         
     }, [errors, dataIsCorrect, navigate ]);
