@@ -14,7 +14,7 @@
     border-radius: 12px;
     width: 18rem;
 }
-input{
+.showPassword{
     border: 1px solid red;
   }
 .form  {

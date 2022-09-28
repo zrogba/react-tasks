@@ -2,11 +2,11 @@ import React from "react";
 import {  Link } from 'react-router-dom';
 
 import './forgot.css';
-import useForm from "./useForm";
+import useForm from "../../../hooks/useForm";
 //1.create constant login
 const Forgot = () => {
 	//3.import usestate snippet and create array of data
-	const {handleInput, handleSubmit, values, errors} = useForm();
+	const {handleChange, handleSubmit, values, errors} = useForm();
 
 	return (
 		
@@ -19,7 +19,7 @@ const Forgot = () => {
 						<label htmlFor="inputEmail">Email address</label>
 						<input type="text" autoComplete="off" className="form-control" id="inputEmail"
 							aria-describedby="emailHelp" placeholder="Enter email" value={values.email}
-							name="email" onChange={handleInput} />
+							name="email" onChange={handleChange} />
 							{errors.email && <p className="error">{errors.email}</p>}
 					</div>
 

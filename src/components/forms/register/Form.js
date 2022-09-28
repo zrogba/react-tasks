@@ -3,14 +3,14 @@ import Register from "./register";
 import FormSuccess from "./FormSuccess";
 
 
-const Form = (SubmitForm) => {
+const Form = ({submitForm}) => {
     //create a state called form is submitted with assigned value false
     //if form is correct 
     const [formIsSubmitted, setFormIsSubmitted] = useState(false);
 
-    const SubmitForm = () => {
+    const submitForm = () => {
         setFormIsSubmitted(true);
-        SubmitForm()
+        submitForm('');
     };
     //pass props SubmitForm from form to register etc
     return (

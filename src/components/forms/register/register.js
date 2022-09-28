@@ -1,64 +1,27 @@
 import React from "react";
 import './register.css';
 import { Link } from 'react-router-dom';
-import useForm from "./useForm";
-import { db } from "../firebase";
-// import { FaUserAlt } from 'react-icons/fa';
+import useForm from "../../../hooks/useForm";
+import { db } from "../../../firebase";
+import { useId } from "react";
+ 
+ 
+ 
 
-//1.create  register
 
-const Register = () => {
-	//3.import usestate snippet and create array of data of the input values
-	const { handleChange, handleSubmit, values, errors} = useForm( );
-
-	//replace and   create a custom hook to defracture  useForm
-	/*
-	const [values, setValues] = useState({
-		firstname: "", lastname: "",
-		phone: "", email: "",
-		password: "", confirmPassword: "",
-	});
-	//10.set the usestate for errors
-	const [errors, setErrors] = useState({});
-	//11.set the usestate for correct data input
-	const [dataIsCorrect, setDataIsCorrect] = useState(false);
-
-	//2.call method handleChange to send data via input 
-	//to the e.target event handler /run tests in browser console
-	const handleChange = (e) => {
-		const name = e.target.name;
-		const value = e.target.value;
-		console.log(name, value);
-		//5.using the spread operator to caall the array of data run tests in browser console
-		//
-		setValues({ ...values, [name]: value })
-	}
-
-	//6. call the handlesubmit e.preventDefault method to implement submit
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		
-//9.to validate and show the errors
-setErrors(Validations(values));
-		 //15.when clicked set data is true
-setDataIsCorrect(true);
-	};
-//impleemtn usefect to chekc if there are errors
-useEffect(() => {
-
-  if(Object.keys(errors).length === 0 && dataIsCorrect) {
-	submitForm(true);
-
-  } // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [errors]);
-*/
-	//.call the errors to check if true to display in div paragraph
-
+const Register = ({submitForm}) => {
+	const id = useId();
+	
+	//useForm hook component
+	const { handleChange, handleSubmit, values, errors} = useForm(submitForm);
+	
+	 
+	//Firebase
 	db.collection("users")
 		.add({ values: values });
-
-
-	return (
+		/////********************************** */s
+	
+		return (
 		<>
 			<div className="container">
 				<div className="card" >
@@ -66,10 +29,11 @@ useEffect(() => {
 					<h4><Link to="/Login">or Login</Link></h4>
 					<form action="" onSubmit={handleSubmit}>
 						<div className="form-group">
+						
 							<label htmlFor="firstname">First Name</label>
-							<input type="text" autoComplete="off" className="form-control" id="firstname"
+							<input type="text" autoComplete="off" className="form-control" id={id + '-firstname'}
 								placeholder="First Name" value={values.firstname}
-								name="firstname" onChange={handleChange} />
+								name="firstname" onChange={handleChange} required/>
 							{errors.firstname && <p className="error">{errors.firstname}</p>}
 						</div>
 						<div className="form-group">
@@ -110,7 +74,7 @@ useEffect(() => {
 							{errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
 						</div>
 						 
-						<button type="submit" className="btn" onClick={handleSubmit}>Register</button>
+						<button type="submit" className="btn" onSubmit={handleSubmit}>Register</button>
 						
 					</form>
 

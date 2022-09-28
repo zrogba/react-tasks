@@ -1,7 +1,7 @@
 import React from "react";
 import { FaRegCheckCircle } from "react-icons/fa";
 
-const FormSuccess = (SubmitForm) => {
+const FormSuccess = () => {
 
     return (
         <div className="container">

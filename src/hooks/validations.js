@@ -25,9 +25,9 @@ const Validations = values => { //set logics if input and values are empty- disp
    } else if(values.password.length < 5) {
     errors.password='Password must be more than five characters';
    }
-   else if(!/(?=.*?[A-Z])/.test(values.password)){
+   /*else if(!/(?=.*?[A-Z])/.test(values.password)){
     errors.password="At least one Uppercase";
-}
+}*/
 else if(!/(?=.*?[0-9])/.test(values.password)){
   errors.password="At least one Digit";
 }/*
