@@ -1,4 +1,4 @@
-const Validations = values => { //set logics if input and values are empty- display errors
+const validate = values => { //set logics if input and values are empty- display errors
    let errors = {};
    
    if (!values.firstname){
@@ -47,4 +47,4 @@ else if(!/(?=.*?[#?!@$%^&*-])/.test(values.password)){
     return errors;
   }
 
-  export default Validations;
+  export default validate;

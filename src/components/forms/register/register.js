@@ -3,22 +3,23 @@ import './register.css';
 import { Link } from 'react-router-dom';
 import useForm from "../../../hooks/useForm";
 import { db } from "../../../firebase";
-import { useId } from "react";
+import validate from "../../../validations";
+ 
  
  
  
 
 
 const Register = ({submitForm}) => {
-	const id = useId();
+
 	
 	//useForm hook component
-	const { handleChange, handleSubmit, values, errors} = useForm(submitForm);
+	const { handleChange, handleSubmit, values, errors} = useForm(submitForm, validate);
 	
 	 
 	//Firebase
 	db.collection("users")
-		.add({ values: values });
+		.add({ values: values});
 		/////********************************** */s
 	
 		return (
@@ -31,8 +32,8 @@ const Register = ({submitForm}) => {
 						<div className="form-group">
 						
 							<label htmlFor="firstname">First Name</label>
-							<input type="text" autoComplete="off" className="form-control" id={id + '-firstname'}
-								placeholder="First Name" value={values.firstname}
+							<input type="text" autoComplete="off" className="form-control" id="firstName"
+							placeholder="First Name" value={values.firstname}
 								name="firstname" onChange={handleChange} required/>
 							{errors.firstname && <p className="error">{errors.firstname}</p>}
 						</div>
