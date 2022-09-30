@@ -17,7 +17,7 @@ const useForm = () => {
     
     });
     
-
+    
     const navigate = useNavigate();
     //10.set the usestate for errors
     const [errors, setErrors] = useState({});
@@ -27,13 +27,13 @@ const useForm = () => {
     //2.call method se to send data via input 
     //to the e.target event handler /run tests in browser console
     const handleChange = (e) => {
-        
+       
         const name = e.target.name;
         const value = e.target.value;
         const id = e.target.id;
         e.preventDefault();
-        console.log( value);
-        setValues({ ...values, [name]: value, id})
+        console.log( value, id);
+        setValues({ ...values, [name]: value})
        
     }
 

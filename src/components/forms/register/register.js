@@ -11,7 +11,7 @@ import  { useId } from 'react';
 
 const Register = ({submitForm}) => {
 
-	const id = useId()
+	
 	//useForm hook component
 	const { handleChange, handleSubmit, values, errors} = useForm(submitForm, validate);
 	
@@ -19,39 +19,40 @@ const Register = ({submitForm}) => {
 	//Firebase
 	db.collection("users")
 		.add({ values: values});
+
 		/////********************************** */s
-	
+		const id = useId();
 		return (
 		<>
 			<div className="container">
 				<div className="card" >
 					<h2>Create an account</h2>
 					<h4><Link to="/Login">or Login</Link></h4>
-					<form action="" onSubmit={handleSubmit} > 
+					<form action="" onSubmit={handleSubmit} id={` ${id}`}> 
 						<div className="form-group">
-						<label htmlFor="firstname">First Name</label>	
-							<input type="text" autoComplete="off" className="form-control" id="firstname" 
+						<label htmlFor={`${id}-firstname`} >First Name</label>	
+							<input type="text" autoComplete="off" className="form-control" id={`${id}-firstname`} 
 							placeholder="First Name" value={values.firstname}
 								name="firstname" onChange={handleChange} required/>
 							{errors.firstname && <p className="error">{errors.firstname}</p>}
 						</div>
 						<div className="form-group">
-							<label htmlFor="lastname">Last Name</label>
-							<input type="text" autoComplete="off" className="form-control" id="lastname"
+							<label htmlFor={`${id}-lastname`}>Last Name</label>
+							<input type="text" autoComplete="off" className="form-control" id={`${id}-lastname`}
 								placeholder="Last Name" value={values.lastname}
 								name="lastname" onChange={handleChange} />
 							{errors.lastname && <p className="error">{errors.lastname}</p>}
 						</div>
 						<div className="form-group">
-							<label htmlFor="phone">Phone Number</label>
-							<input type="text" autoComplete="off" className="form-control" id="phone"
+							<label htmlFor={`${id}-phone`}>Phone Number</label>
+							<input type="text" autoComplete="off" className="form-control" id={`${id}-phone`}
 								placeholder="Phone" value={values.phone}
 								name="phone" onChange={handleChange} />
 							{errors.phone && <p className="error">{errors.phone}</p>}
 						</div>
 						<div className="form-group">
-							<label htmlFor="email">Email address</label>
-							<input type="text" autoComplete="off" className="form-control" id={`email-${id}`}
+							<label htmlFor={`${id}-email`}>Email address</label>
+							<input type="text" autoComplete="off" className="form-control" id={`${id}-email`}
 								aria-describedby="emailHelp" placeholder="Enter email" value={values.email}
 								name="email" onChange={handleChange} />
 							{errors.email && <p className="error">{errors.email}</p>}
