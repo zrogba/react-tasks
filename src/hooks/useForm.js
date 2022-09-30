@@ -23,23 +23,25 @@ const useForm = () => {
     const [errors, setErrors] = useState({});
     //11.set the usestate for correct data input
     const [dataCorrect, setDataCorrect] = useState(false);
-   
+
     //2.call method se to send data via input 
     //to the e.target event handler /run tests in browser console
     const handleChange = (e) => {
         
         const name = e.target.name;
         const value = e.target.value;
+        const id = e.target.id;
         e.preventDefault();
-        console.log(value);
-        setValues({ ...values, [name]: value })
-      
+        console.log( value);
+        setValues({ ...values, [name]: value, id})
+       
     }
 
     //6. call the handlesubmit e.preventDefault method to implement submit
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors(validate(values));
+        
         setDataCorrect(true);
        
     };

@@ -5,18 +5,17 @@ import useForm from "../../../hooks/useForm";
 import { db } from "../../../firebase";
 import validate from "../../../validations";
  
- 
- 
+import  { useId } from 'react';
  
 
 
 const Register = ({submitForm}) => {
 
-	
+	const id = useId()
 	//useForm hook component
 	const { handleChange, handleSubmit, values, errors} = useForm(submitForm, validate);
 	
-	 
+
 	//Firebase
 	db.collection("users")
 		.add({ values: values});
@@ -28,11 +27,10 @@ const Register = ({submitForm}) => {
 				<div className="card" >
 					<h2>Create an account</h2>
 					<h4><Link to="/Login">or Login</Link></h4>
-					<form action="" onSubmit={handleSubmit}>
+					<form action="" onSubmit={handleSubmit} > 
 						<div className="form-group">
-						
-							<label htmlFor="firstname">First Name</label>
-							<input type="text" autoComplete="off" className="form-control" id="firstName"
+						<label htmlFor="firstname">First Name</label>	
+							<input type="text" autoComplete="off" className="form-control" id="firstname" 
 							placeholder="First Name" value={values.firstname}
 								name="firstname" onChange={handleChange} required/>
 							{errors.firstname && <p className="error">{errors.firstname}</p>}
@@ -53,7 +51,7 @@ const Register = ({submitForm}) => {
 						</div>
 						<div className="form-group">
 							<label htmlFor="email">Email address</label>
-							<input type="text" autoComplete="off" className="form-control" id="email"
+							<input type="text" autoComplete="off" className="form-control" id={`email-${id}`}
 								aria-describedby="emailHelp" placeholder="Enter email" value={values.email}
 								name="email" onChange={handleChange} />
 							{errors.email && <p className="error">{errors.email}</p>}
