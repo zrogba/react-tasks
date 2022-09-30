@@ -1,7 +1,7 @@
 import React from "react";
 import {  Link } from 'react-router-dom';
 
-import './forgot.css';
+ 
 import useForm from "../../../hooks/useForm";
 //1.create constant login
 const Forgot = () => {

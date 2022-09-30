@@ -4,23 +4,23 @@ import { Link } from 'react-router-dom';
 import useForm from "../../../hooks/useForm";
 import { db } from "../../../firebase";
 import validate from "../../../validations";
- 
 import  { useId } from 'react';
- 
-
 
 const Register = ({submitForm}) => {
 
-	
 	//useForm hook component
 	const { handleChange, handleSubmit, values, errors} = useForm(submitForm, validate);
-	
 
 	//Firebase
 	db.collection("users")
-		.add({ values: values});
+		.add({
+		firstname: values.firstname,
+        lastname: values.lastname,
+        phone: values.phone,
+        email: values.email,
+        password: values.password,});
 
-		/////********************************** */s
+		/////********************************** */
 		const id = useId();
 		return (
 		<>

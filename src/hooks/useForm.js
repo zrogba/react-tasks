@@ -2,9 +2,6 @@ import { useState, useEffect} from "react";
 import validate from "../validations";
 import { useNavigate } from "react-router-dom";
 
-//Firebase
-
-
 const useForm = () => {
     const [values, setValues] = useState({
       
@@ -14,7 +11,6 @@ const useForm = () => {
         email: "",
         password: "",
         confirmPassword: "",
-    
     });
     
     
@@ -32,16 +28,15 @@ const useForm = () => {
         const value = e.target.value;
         const id = e.target.id;
         e.preventDefault();
-        console.log( value, id);
+        console.log( id, value);
         setValues({ ...values, [name]: value})
        
     }
-
+  
     //6. call the handlesubmit e.preventDefault method to implement submit
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors(validate(values));
-        
         setDataCorrect(true);
        
     };
