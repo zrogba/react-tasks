@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 
-const firebaseApp = firebase.initializeApp ({
+const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyCuzVi7q1BSFt1pIEVGj5zb8SUcTYgytjQ",
   authDomain: "users-table-41b22.firebaseapp.com",
   databaseURL: "https://users-table-41b22-default-rtdb.europe-west1.firebasedatabase.app",

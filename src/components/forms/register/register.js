@@ -4,36 +4,37 @@ import { Link } from 'react-router-dom';
 import useForm from "../../../hooks/useForm";
 import { db } from "../../../firebase";
 import validate from "../../../validations";
-import  { useId } from 'react';
+import { useId } from 'react';
 
-const Register = ({submitForm}) => {
+const Register = ({ submitForm }) => {
 
 	//useForm hook component
-	const { handleChange, handleSubmit, values, errors} = useForm(submitForm, validate);
+	const { handleChange, handleSubmit, values, errors } = useForm(submitForm, validate);
 
 	//Firebase
 	db.collection("users")
-		.add({
-		firstname: values.firstname,
-        lastname: values.lastname,
-        phone: values.phone,
-        email: values.email,
-        password: values.password,});
+		.add({id: useId(),
+			firstname: values.firstname,
+			lastname: values.lastname,
+			phone: values.phone,
+			email: values.email,
+			password: values.password,
+		});
 
-		/////********************************** */
-		const id = useId();
-		return (
+	/////********************************** */
+	const id = useId();
+	return (
 		<>
 			<div className="container">
 				<div className="card" >
 					<h2>Create an account</h2>
 					<h4><Link to="/Login">or Login</Link></h4>
-					<form action="" onSubmit={handleSubmit} id={` ${id}`}> 
+					<form action="" onSubmit={handleSubmit} id={` ${id}`}>
 						<div className="form-group">
-						<label htmlFor={`${id}-firstname`} >First Name</label>	
-							<input type="text" autoComplete="off" className="form-control" id={`${id}-firstname`} 
-							placeholder="First Name" value={values.firstname}
-								name="firstname" onChange={handleChange} required/>
+							<label htmlFor={`${id}-firstname`} >First Name</label>
+							<input type="text" autoComplete="off" className="form-control" id={`${id}-firstname`}
+								placeholder="First Name" value={values.firstname}
+								name="firstname" onChange={handleChange} required />
 							{errors.firstname && <p className="error">{errors.firstname}</p>}
 						</div>
 						<div className="form-group">
@@ -73,9 +74,9 @@ const Register = ({submitForm}) => {
 								value={values.confirmPassword} placeholder="Retype Password" name="confirmPassword" onChange={handleChange} />
 							{errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
 						</div>
-						 
+
 						<button type="submit" className="btn" onSubmit={handleSubmit}>Register</button>
-						
+
 					</form>
 
 				</div>
@@ -84,7 +85,7 @@ const Register = ({submitForm}) => {
 
 		</>
 	)
-	
+
 }
 
 export default Register;
